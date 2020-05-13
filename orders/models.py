@@ -17,7 +17,12 @@ class Dish(models.Model):
     category = models.ManyToManyField(Category, blank=True, related_name='category_content')
 
     def __str__(self):
-        return f"{self.name} from Category {self.category}"
+        #str_cat = ""
+        #for elem in self.category.all():
+        #    str_cat += " "
+        #    str_cat += str(elem)
+        #return f"{self.name} in category / -ies: {str_cat}"
+        return f"{self.name}"
 
 class Additional(models.Model):
     name = models.CharField(max_length=64)
